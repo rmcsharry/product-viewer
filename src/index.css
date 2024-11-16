@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.orbit-control {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #cccccc);
+  cursor: pointer;
+  position: relative;
+  border: 2px solid #666;
+}
+
+/* Invert the slider range to make 0% at top and 100% at bottom */
+[data-orientation="vertical"] [role="slider"] {
+  transform: rotate(180deg);
+}
