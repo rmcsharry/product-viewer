@@ -8,7 +8,7 @@ interface ZoomProps {
 
 const Zoom: Component<ZoomProps> = (props) => {
   // Convert the value to a percentage for the Range component
-  const getInvertedValue = (value: number) => 11 - value;
+  // const getInvertedValue = (value: number) => 11 - value;
 
   return (
     <div class="h-[400px] flex items-center relative">
@@ -46,7 +46,7 @@ const Zoom: Component<ZoomProps> = (props) => {
                 }}
               />
             </Slider.Track>
-            <Slider.Thumb class="absolute left-2 w-4 h-4 bg-white border-2 border-blue-500 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            {/* <Slider.Thumb class="absolute left-2 w-4 h-4 bg-white border-2 border-blue-500 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" /> */}
           </Slider.Control>
         </Slider.Root>
       </div>

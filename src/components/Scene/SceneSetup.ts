@@ -4,8 +4,6 @@ import {
   WebGLRenderer,
   Color,
   Object3D,
-  AxesHelper,
-  PointLight,
   AmbientLight,
   Box3,
   Vector3,
@@ -13,9 +11,9 @@ import {
   Object3DEventMap,
   Group,
   PMREMGenerator,
-  DirectionalLight
+  DirectionalLight,
 } from 'three';
-import { GLTF, RoomEnvironment } from 'three/examples/jsm/Addons.js';
+import { GLTF } from 'three/examples/jsm/Addons.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
@@ -46,7 +44,6 @@ export class SceneSetup {
   content: Object3D;
   state: SceneState;
   pmremGenerator: PMREMGenerator;
-  neutralEnvironment: RoomEnvironment;
   onZoomChange?: (zoom: number) => void;
 
   constructor(container: HTMLElement) {
@@ -87,7 +84,7 @@ export class SceneSetup {
     this.pmremGenerator = new PMREMGenerator(this.renderer);
 		this.pmremGenerator.compileEquirectangularShader();
 
-    this.neutralEnvironment = this.pmremGenerator.fromScene(new RoomEnvironment()).texture;
+    
     this.controls = new OrbitControls(this.defaultCamera, this.renderer.domElement);
     this.controls.screenSpacePanning = true;
     
@@ -160,10 +157,10 @@ export class SceneSetup {
         // this.model = gltf.scene;
         // this.scene.add(gltf.scene);
       },
-      (xhr) => {
+      (xhr: any) => {
         console.log((xhr.loaded / xhr.total * 100) + '% loaded');
       },
-      (error) => {
+      (error: unknown) => {
         console.error('Error loading model:', error);
       }
     );
@@ -210,7 +207,7 @@ export class SceneSetup {
     
   }
 
-	setCamera(name) {
+	setCamera(name: string) {
 		if (name === DEFAULT_CAMERA) {
 			this.controls.enabled = true;
 			this.activeCamera = this.defaultCamera;

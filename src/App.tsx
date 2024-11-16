@@ -1,11 +1,9 @@
 import { createSignal } from 'solid-js';
 import Viewer3D from './components/Viewer3D';
-import Zoom from './components/Controls/Zoom';
-import Orbit from './components/Controls/Orbit';
 
 function App() {
   const [zoom, setZoom] = createSignal(5);
-  const [rotation, setRotation] = createSignal({ x: 0, y: 0 });
+  const [rotation] = createSignal({ x: 0, y: 0 });
 
   return (
     <div class="min-h-screen bg-gray-100 p-8">

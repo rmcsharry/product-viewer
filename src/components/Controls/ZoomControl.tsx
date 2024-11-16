@@ -22,7 +22,7 @@ const ZoomControl: Component<ZoomControlProps> = (props) => {
           <Slider.Track class="absolute h-2 top-3 w-full bg-gray-200 rounded-full">
             <Slider.Range class="absolute h-full bg-blue-500 rounded-full" />
           </Slider.Track>
-          <Slider.Thumb class="absolute top-2 w-4 h-4 bg-white border-2 border-blue-500 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          {/* <Slider.Thumb class="absolute top-2 w-4 h-4 bg-white border-2 border-blue-500 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" /> */}
         </Slider.Control>
       </Slider.Root>
     </div>
